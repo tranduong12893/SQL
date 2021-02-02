@@ -85,7 +85,7 @@ CREATE VIEW V_Student_Mark  AS
 SELECT e.RollNo,e.FullName
 FROM Student e
 JOIN Mark AS p ON e.RollNo=p.RollNo
-WHERE 
+HAVING COUNT(p.SubjectCode)>1;
 GO
 SELECT * FROM V_Book_BookSold
 --3. Tạo một khung nhìn chứa danh sách tất cả các sinh viên đã bị trượt ít nhất là một môn. 
